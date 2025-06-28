@@ -1,29 +1,35 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GraduationCap, Users, Calendar, Award } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { GraduationCap, Users, Calendar, Award } from "lucide-react";
 
 export default function LandingPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const cheese = "cheese"; // Placeholder for cheese variable, not used in this example
+  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Simulate login - in real app, this would validate credentials
     if (email && password) {
-      localStorage.setItem("isLoggedIn", "true")
-      localStorage.setItem("userEmail", email)
-      router.push("/dashboard")
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", email);
+      router.push("/dashboard");
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -33,7 +39,9 @@ export default function LandingPage() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <GraduationCap className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">AlumniConnect</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">
+                AlumniConnect
+              </span>
             </div>
           </div>
         </div>
@@ -49,23 +57,30 @@ export default function LandingPage() {
                 <span className="text-blue-600"> Alumni Network</span>
               </h1>
               <p className="mt-6 text-xl text-gray-600">
-                Stay connected with your college community. Discover opportunities, share experiences, and build lasting
-                professional relationships.
+                Stay connected with your college community. Discover
+                opportunities, share experiences, and build lasting professional
+                relationships.
               </p>
 
               {/* Features */}
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex items-center">
                   <Users className="h-5 w-5 text-blue-600" />
-                  <span className="ml-2 text-sm text-gray-600">10,000+ Alumni</span>
+                  <span className="ml-2 text-sm text-gray-600">
+                    10,000+ Alumni
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-5 w-5 text-blue-600" />
-                  <span className="ml-2 text-sm text-gray-600">Regular Events</span>
+                  <span className="ml-2 text-sm text-gray-600">
+                    Regular Events
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <Award className="h-5 w-5 text-blue-600" />
-                  <span className="ml-2 text-sm text-gray-600">Career Support</span>
+                  <span className="ml-2 text-sm text-gray-600">
+                    Career Support
+                  </span>
                 </div>
               </div>
             </div>
@@ -75,7 +90,9 @@ export default function LandingPage() {
               <Card className="w-full max-w-md">
                 <CardHeader>
                   <CardTitle>Welcome Back</CardTitle>
-                  <CardDescription>Sign in to access your alumni network</CardDescription>
+                  <CardDescription>
+                    Sign in to access your alumni network
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleLogin} className="space-y-4">
@@ -143,5 +160,5 @@ export default function LandingPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
