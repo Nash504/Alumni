@@ -18,7 +18,8 @@ import { GraduationCap, Users, Calendar, Award } from "lucide-react";
 export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const cheese = "cheese"; // Placeholder for cheese variable, not used in this example
+  const cheese = "cheese";
+  const test = "test"; // Placeholder for cheese variable, not used in this example
   const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
